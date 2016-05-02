@@ -1,0 +1,58 @@
+<ion-view>
+  <ion-nav-title>
+    <img class="logo" src="./img/lbb-logo.png" alt="logo"/>
+    <h1 class="title-text">
+      View Nearby Services
+    </h1>
+  </ion-nav-title>
+  <ion-content has-header="true" class="main-background">
+    <div class="card info-card">
+      <div class="pad-bot-m">
+        <span>You're in luck! There are { Number of services } services nearby. Click on a pin to learn more.</span>
+      </div>
+      <div class="btn-center">
+        <a href="#/app/map">
+        <button id="ask-answer-btn" class="button button-lbb">
+          find again >
+        </button>
+        <a href="#/app/searchresults">
+        <button id="ask-answer-btn" class="button button-lbb">
+          view as list >
+        </button>
+      </a>
+      
+  </div>
+
+
+    <div class="card info-card">
+      <div class="item item-text-wrap">
+        <div>
+            <div id="map" style="height:300px;"></div>
+            <div ng-repeat="marker in markers | orderBy : 'title'">
+            </div>
+
+        </div>
+        <br />
+        Optionally, enter a street address to find services nearby to that location.
+        <br /><br />
+
+        <form  ng-submit="update()">
+        <div class="pad-bot-s">
+          <label class="item item-input item-input-border">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input ng-model="address.addressInput" type="text" placeholder="Enter a street address">
+          </label>
+        </div>
+        <div class="btn-right">
+          <button class="button button-lbb" type="submit">
+            find services >
+          </button>
+
+
+        </div>
+      </form>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,54 @@
+<ion-view>
+  <ion-nav-title>
+    <img class="logo" src="./img/lbb-logo.png" alt="logo"/>
+    <h1 class="title-text">
+      Little Blue Books
+    </h1>
+  </ion-nav-title>
+  <ion-content class="main-background" style="padding: 0px 15px 0px 15px">
+    <div class="card info-card">
+      <div class="pad-bot-m">
+      <center><h3>ask me anything</h3></center>
+      <span>Hi, I'm Watson! I can help you find a support agency in your area, please state your problem?</span>
+      </div>
+      <div class="pad-bot-s">
+        <label class="item item-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="text" placeholder="How can I help?" ng-model="qa.question">
+        </label>
+      </div>
+      <div class="pad-bot-m text-right">
+          <button class="button button-positive", ng-click="qa.goToDialog(qa.question)">
+            get answer >
+          </button>
+      </div>
+    </div>
+
+    <div class="card info-card">
+      <div class="pad-bot-m">
+        <center><h3>...or choose a category</h3></center>
+        <span>Choose from the list below to view appropriate services</span>
+      </div>
+      <div class="pad-bot-s">
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Select:
+          </div>
+          <select ng-model="qa.data.CatagorySelect" ng-change="qa.updateCategory()">
+            <option value="All" >All</option>
+            <option value="Telephone" >Telephone Help, Information & Advice Lines</option>
+            <option value="Web">Websites & Online Services</option>
+            <option value="Youth">Youth & Community</option>
+            <option value="Health">Health</option>
+          </select>
+        </label>
+      </div>
+      <div class="pad-bot-m text-right">
+        <button class="button button-positive" ng-click="qa.goToBrowse()">
+          view category >
+        </button>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

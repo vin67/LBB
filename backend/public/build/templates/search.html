@@ -1,0 +1,57 @@
+<ion-view>
+  <ion-nav-title>
+    <img class="logo" src="./img/lbb-logo.png" alt="logo"/>
+    <h1 class="title-text">
+      Little Blue Books
+    </h1>
+  </ion-nav-title>
+  <ion-content class="main-background">
+    <div class="card info-card">
+      <div class="pad-bot-m">
+      <center><h3>ask me anything</h3></center>
+      <span>Start typing your question below and we'll see what we can find!</span>
+      </div>
+      <div class="pad-bot-s">
+        <label class="item item-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="text" placeholder="How can I help?" ng-modal="search.question">
+        </label>
+      </div>
+      <div class="pad-bot-m text-right">
+        <a href="#/app/searchresults">
+          <button class="button button-lbb">
+            get answer >
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <div class="card info-card">
+      <div class="pad-bot-m">
+        <center><h3>...or choose a category</h3></center>
+        <span>Choose from the list below to view appropriate services</span>
+      </div>
+      <div class="pad-bot-s">
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Select:
+          </div>
+          <select ng-model="category" ng-change="updateCategory()">
+            <option value="Telephone" >Telephone Help, Information & Advice Lines</option>
+            <option selected value="Web">Websites & Online Services</option>
+            <option value="Youth">Youth & Community</option>
+            <option value="Health">Health</option>
+          </select>
+        </label>
+      </div>
+      <div class="pad-bot-m text-right">
+        <a href="#/app/browse">
+        <button class="button button-lbb" ng-click="updateType('Category')">
+          view category >
+        </button>
+      </a>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

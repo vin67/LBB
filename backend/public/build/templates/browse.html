@@ -1,0 +1,42 @@
+<ion-view>
+  <ion-nav-title>
+    <img class="logo" src="./img/lbb-logo.png" alt="logo"/>
+    <h1 class="title-text">
+      Browse all services
+    </h1>
+  </ion-nav-title>
+	<ion-content has-header="true" class="main-background">
+    <div class="card info-card">
+      You can browse services by category. Click on any category to view a list of related services.
+      <br /><br />
+      <div class="btn-center">
+        <a href="#/app/searchresults">
+        <button class="button button-lbb">
+          sort a-z
+        </button></a>
+        <a href="#/app/map">
+        <button class="button button-lbb">
+          view on map
+        </button>
+      </a>
+    </div>
+    </div>
+
+    <ion-list show-delete="shouldShowDelete" on-delete="deleteEntry(item)"
+                      option-buttons="itemButtons" can-swipe="true">
+            <!-- <ion-item ng-repeat="item in qaResponse" item="item"> -->
+            <ion-item ng-repeat="item in qaResponse | filter:{ServiceType:category}" item="item">
+              <!--<i class="icon ion-ios-information"></i>-->
+              <a href="#" class="item item-thumbnail-left">
+                <img ng-src="./img/placeholder-1.png">
+                <h3>{{item.ServiceName}}</h3>
+                <h4>{{item.WebAddress}}</h4>
+                <br />
+                <button class="button button-lbb">
+                  view >
+                </button>
+              </a>
+            </ion-item>
+       </ion-list>
+  </ion-content>
+</ion-view>

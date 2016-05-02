@@ -1,0 +1,357 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+*/
+
+$stable: #B2B2B2;
+$dark: #080425;
+$calm: #0054A5;
+$balanced: #f2f2f2;
+
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+
+$padding-s: 10px;
+$padding-m: 20px;
+$padding-l: 30px;
+
+$border-s: 8px;
+$border-m: 16px;
+$border-l: 24px;
+
+// $header-height: 100px;
+$card-border-radius: $border-s;
+$button-border-radius: $border-s;
+$button-color: #404040;
+$button-default-bg: $balanced;
+$input-color-placeholder: #404040;
+
+$footer-height: 44px;
+$chat-input-height: 62px;
+
+
+
+// Include all of Ionic
+@import "../lib/ionic/scss/ionic";
+
+
+
+
+
+
+
+body,html {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	color: #ffffff;
+}
+
+a {
+	text-decoration: none;
+	color: #00aed1;
+
+	&:hover{
+		text-decoration: underline;
+
+	}
+}
+
+h1 {
+	font-weight: bold;
+	font-size: 2em;
+}
+
+h3 {
+	/*color: #0A286E;*/
+	color:#fff;
+}
+
+
+input::-webkit-input-placeholder{
+	font-style:italic;
+}
+
+table {
+	table-layout: fixed;
+	width: 800px;
+	margin: 0 auto;
+	word-wrap: break-word;
+	padding-top:10%;
+}
+
+th {
+	border-bottom: 1px solid #000;
+}
+
+th, td {
+	text-align: left;
+	padding: 2px 20px;
+}
+
+
+pre {
+	padding: 0;
+	margin: 0;
+}
+
+.pad-bot-s{
+	padding-bottom: $padding-s;
+}
+.pad-bot-m{
+	padding-bottom: $padding-m;
+}
+.pad-bot-l{
+	padding-bottom: $padding-l;
+}
+
+
+
+.button{
+	min-height: 40px;
+	line-height: 35px;
+}
+
+.loading-ellipses{
+	.one {
+    opacity: 0;
+    -webkit-animation: dot 1.3s infinite;
+    animation: dot 1.3s infinite;
+    -webkit-animation-delay: 0.0s;
+    animation-delay: 0.0s;
+	}
+
+	.two {
+	  opacity: 0;
+    -webkit-animation: dot 1.3s infinite;
+		animation: dot 1.3s infinite;
+    -webkit-animation-delay: 0.2s;
+		animation-delay: 0.2s;
+	}
+
+	.three {
+    opacity: 0;
+    -webkit-animation: dot 1.3s infinite;
+		animation: dot 1.3s infinite;
+    -webkit-animation-delay: 0.3s;
+		animation-delay: 0.3s;
+	}
+
+}
+
+
+.my-nav-bar{
+	// height: $header-height !important;
+	>div{
+		// height: $header-height !important;
+	}
+
+	.nav-bar-title{
+		position:relative; //potentially required due to font
+		top: -2px;
+	}
+
+	.logo{
+		width:32px;
+		height: 32px;
+		vertical-align: middle;
+
+	}
+
+	.title-text{
+		display: inline;
+		margin: 0;
+		vertical-align: middle;
+		font-weight: 500;
+		font-size: 17px;
+		color: $dark;
+		overflow: hidden;
+		text-overflow: ellipsis;
+
+	}
+
+	.button.button-icon.reachout-alert{
+		background: url('../img/lbb-alert.png') no-repeat center;
+		width:32px;
+		height:32px;
+		background-size: 32px;
+	}
+
+	// .button.button-icon.ion-android-alert{ //HACKY
+	// 	color: $calm;
+	// 	background-color: $light;
+	// 	border-radius: 50%;
+	// 	width:24px;
+	// 	height:24px;
+	// 	min-height: 24px;
+	// 	border:none;
+	// 	margin:5px 0;
+	// 	padding:0;
+
+	// 	&:before{
+	// 		font-size: 26px;
+	// 		line-height: 25px;
+	// 		padding: 0;
+	// 	}
+		// border: 2px solid $light;
+	// }
+
+}
+
+// .has-header{
+// 	top:$header-height;
+// }
+
+// .menu .has-header{
+// 	top:44px;
+// }
+
+.newappIcon {
+	padding-top: 10%;
+	display: block;
+	margin: 0 auto;
+	padding-bottom: 2em;
+	max-width:200px;
+}
+.leftHalf {
+	float: left;
+	background-color: #26343f;
+	width: 45%;
+	height: 100%;
+}
+
+.rightHalf {
+	float: right;
+	width: 55%;
+	background-color: #313f4a;
+	height: 100%;
+	overflow:auto;
+}
+
+.blue {
+	color: #00aed1;
+}
+
+.env-var {
+	text-align: right;
+	border-right: 1px solid #000;
+	width: 30%;
+}
+
+
+.card{
+	background:none;
+	box-shadow:none;
+}
+
+.item{
+	p{
+		color: $dark;
+	}
+}
+
+
+.item.item-input.item-input-border{
+	border: 1px solid $stable;
+}
+
+
+.item-select{
+	height:60px;
+}
+.search_category{
+	height:60px;
+}
+
+
+
+.input-label{
+	text-shadow:none;
+}
+
+.main-background{
+	background-color: $dark;
+}
+
+.has-chat-footer{
+	bottom: $footer-height + $chat-input-height;
+}
+
+.message-container{
+	overflow:auto;
+	padding: $padding-s 0;
+
+	.message{
+		padding:$padding-s;
+		border-radius: $border-m;
+		position:relative
+
+	}
+
+	.message.watson{
+		background-color: $calm;
+		float:left;
+		margin-right:$padding-m;
+		border-top-left-radius:0;
+
+		// &:after{
+		// 	content: "";
+		// 	position:absolute;
+		// 	top:0;
+		// 	left:0;
+		// 	border:22px solid;
+		// 	border-color: $calm transparent transparent transparent;
+		// }
+	}
+
+	.message.watson.link{
+		background-color: $positive;
+	}
+
+	.message.user{
+		background-color: $stable;
+		color: $dark;
+		float:right;
+		margin-left:$padding-m;
+		border-top-right-radius:0;
+	}
+}
+
+
+
+.chat-input{
+	position: absolute;
+	bottom:$footer-height;
+	left:0;
+	right:0;
+
+	.item-input-wrapper{
+		height:40px;
+	}
+}
+
+
+
+/* keyframes */
+
+@-webkit-keyframes dot{
+      0% { opacity: 0; }
+     50% { opacity: 0; }
+    100% { opacity: 1; }
+} 
+
+@keyframes dot {
+      0% { opacity: 0; }
+     50% { opacity: 0; }
+    100% { opacity: 1; }
+}

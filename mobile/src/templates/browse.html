@@ -1,0 +1,56 @@
+<ion-view>
+  <ion-nav-title>
+    <img class="logo" src="./img/lbb-logo.png" alt="logo"/>
+    <h1 class="title-text">
+      Browse all services
+    </h1>
+  </ion-nav-title>
+  <ion-content has-header="true" class="main-background" style="padding: 0px 15px 0px 15px">
+    <div class="card info-card">
+      You can browse services by category. Click on any category to view a list of related services.
+      <br /><br />
+      <div class="btn-center">
+        <a href="#/app/searchresults">
+          <button class="button button-positive">
+            sort a-z
+          </button>
+        </a>
+        <a href="#/app/map">
+          <button class="button button-positive">
+            view on map
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <ion-list show-delete="shouldShowDelete" on-delete="deleteEntry(item)" option-buttons="itemButtons" can-swipe="true">
+      <!-- <ion-item ng-repeat="item in qaResponse" item="item"> -->
+      <ion-item ng-repeat="item in qa.response | orderBy:'ServiceName'" item="item">
+        <!--<i class="icon ion-ios-information"></i>-->
+        <a ng-href="#app/detail/{{item.id}}"  class="item item-avatar">
+          <img ng-src="./img/placeholder-1.png">
+          <b><h2 ng-bind="item.ServiceName"></h2></b>
+          <img ng-show='item.ServiceInformation' height="20" width="20" src="./img/ServiceIcons/ServiceInformation.png">
+          <img ng-show='item.ServiceCarer' height="20" width="20" src="./img/ServiceIcons/ServiceCarer.png">
+          <img ng-show='item.ServiceCounsel' height="20" width="20" src="./img/ServiceIcons/ServiceCounsel.png">
+          <img ng-show='item.ServiceMedicare' height="20" width="20" src="./img/ServiceIcons/ServiceMedicare.png">
+          <img ng-show='item.ServiceMultilingual' height="20" width="20" src="./img/ServiceIcons/ServiceMultilingual.png">
+          <img ng-show='item.ServiceResources' height="20" width="20" src="./img/ServiceIcons/ServiceResources.png">
+          <img ng-show='item.ServiceSocial' height="20" width="20" src="./img/ServiceIcons/ServiceSocial.png">
+          <img ng-show='item.ServiceSupport' height="20" width="20" src="./img/ServiceIcons/ServiceSupport.png">
+          <img ng-show='item.ServiceYouth' height="20" width="20" src="./img/ServiceIcons/ServiceYouth.png">
+          <img ng-show='item.ServiceReferTo' height="20" width="20" src="./img/ServiceIcons/ServiceReferTo.png">
+          <img ng-show='item.ServiceReferFrom' height="20" width="20" src="./img/ServiceIcons/ServiceReferFrom.png">
+          <i><p ng-show='item.DescriptionHealth' ng-bind="item.DescriptionHealth"></p></i>
+          <i><p ng-show='item.DescriptionTele' ng-bind="item.DescriptionTele"></p></i>
+          <i><p ng-show='item.DescriptionWeb' ng-bind="item.DescriptionWeb"></p></i>
+          <i><p ng-show='item.DescriptionYouth' ng-bind="item.DescriptionYouth"></p></i>
+          <br />
+          <button class="button button-positive">
+            view >
+          </button>
+        </a>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

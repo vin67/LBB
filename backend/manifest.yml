@@ -1,0 +1,8 @@
+applications:
+- disk_quota: 1024M
+  host: littlebluebook_Backend
+  name: LittleBlueBook_Backend
+  path: .
+  domain: mybluemix.net
+  instances: 1
+  memory: 1GB

@@ -1,0 +1,62 @@
+<ion-view>
+  <ion-nav-title>
+    <img class="logo" src="./img/lbb-logo.png" alt="logo"/>
+    <h1 class="title-text">
+      Search Results
+    </h1>
+  </ion-nav-title>
+  <ion-content class="main-background">
+    <!--Questions and Keyword Suggestions-->
+    <div class="card info-card">
+        You asked { User input question }
+        <br /><br />We're pretty sure you meant <b>{ keyword }</b>
+        <br />Did you also mean:
+        <br />
+        <div class="row">
+          <div class="col"><a href="#">keyword</a></div>
+          <div class="col"><a href="#">keyword</a></div>
+          <div class="col"><a href="#">keyword</a></div>
+        </div>
+    </div>
+
+    <!--Search Results-->
+    <ion-list>
+      <ion-item ng-repeat="item in qaResponse" class="item-text-wrap"=>
+        <a href="#" class="item item-thumbnail-left">
+                <img ng-src="./img/placeholder-1.png">
+
+
+                <h3>{{item.ServiceName}}</h3>
+                <h4>{{item.AdditionalInfo}}</h4>
+                <h5>{{item.WebAddress}}</h5>
+                <h5>{{item.Telephone}}</h5>
+                <br />
+                <div class="row">
+                  <div class="col"><i class="ion-ios-location"> { Location }</i></div>
+                  <div class="col"><i class="ion-android-call"> { Open Now } </i></div>
+                </div>
+              </a>
+            </ion-item>
+       </ion-list>
+
+
+
+    <!--<div class="list listmod item-text-wrap">
+      <a href="" class="item item-thumbnail-left">
+
+        <img ng-src="/img/ionic.png">
+
+        <h2>Telephone Help, Information & Advice Lines</h2>
+        <h4>Telephone helplines offer a combination of information, support and counselling. These services provide community members with an alternate method of accessing youth, health and community services.</h4>
+        <br/>
+
+        <button id="btn-browse-viewall" class="button button-stable" href="app/browse">
+          View All >
+        </button>
+      </a>
+    </div>-->
+
+
+  </ion-content>
+
+</ion-view>

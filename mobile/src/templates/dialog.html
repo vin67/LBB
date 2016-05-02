@@ -1,0 +1,35 @@
+<ion-view>
+  <ion-nav-title>
+    <img class="logo" src="./img/lbb-logo.png" alt="logo"/>
+    <h1 class="title-text">
+      Little Blue Book
+    </h1>
+  </ion-nav-title>
+  <ion-content class="main-background has-chat-footer">
+    <div class="card info-card">
+      <div class="pad-bot-m">
+        <center><h3>Watson Dialog</h3></center>
+        <span>Watson Dialog Description</span>
+      </div>    
+      <div class="conversation">
+        <div class="message-container" ng-repeat="message in dialog.conversation track by $index">
+          <div class="message" ng-class="{'watson': message.meta.watson, 'user': !message.meta.watson, 'link': message.meta.link}">
+            <div ng-repeat="line in message.response track by $index">
+              <span ng-bind-html="line"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+  <form class="chat-input" ng-submit="dialog.askQuestion()">
+    <div class="item item-input-inset">
+      <label class="item-input-wrapper">
+        <input ng-model="dialog.userInput" type="text" placeholder="Ask Watson">
+      </label>
+      <button class="button button-positive" type="submit">
+        send >
+      </button>
+    </div>
+  </form>
+</ion-view>

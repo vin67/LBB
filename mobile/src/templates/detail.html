@@ -1,0 +1,51 @@
+<ion-view>
+  <ion-nav-title>
+    <img class="logo" src="./img/lbb-logo.png" alt="logo"/>
+    <h1 class="title-text">
+      Little Blue Books
+    </h1>
+  </ion-nav-title>
+  
+  <ion-content class="main-background" style="padding: 0px 15px 0px 15px">
+	<br>
+      <ion-list show-delete="shouldShowDelete" on-delete="deleteEntry(item)" option-buttons="itemButtons" can-swipe="true">
+            <!-- <ion-item ng-repeat="item in qaResponse" item="item"> -->
+            <ion-item ng-repeat="item in qaResponse | orderBy:'ServiceName'" item="item">
+              <!--<i class="icon ion-ios-information"></i>-->
+                <b><h2 style="color:black">{{item.ServiceName}}</h3></b>
+				<img ng-show='item.ServiceInformation' height="20" width="20" ng-src="./img/ServiceIcons/ServiceInformation.png">
+				<img ng-show='item.ServiceCarer' height="20" width="20" ng-src="./img/ServiceIcons/ServiceCarer.png">
+				<img ng-show='item.ServiceCounsel' height="20" width="20" ng-src="./img/ServiceIcons/ServiceCounsel.png">
+				<img ng-show='item.ServiceMedicare' height="20" width="20" ng-src="./img/ServiceIcons/ServiceMedicare.png">
+				<img ng-show='item.ServiceMultilingual' height="20" width="20" ng-src="./img/ServiceIcons/ServiceMultilingual.png">
+				<img ng-show='item.ServiceResources' height="20" width="20" ng-src="./img/ServiceIcons/ServiceResources.png">
+				<img ng-show='item.ServiceSocial' height="20" width="20" ng-src="./img/ServiceIcons/ServiceSocial.png">
+				<img ng-show='item.ServiceSupport' height="20" width="20" ng-src="./img/ServiceIcons/ServiceSupport.png">
+				<img ng-show='item.ServiceYouth' height="20" width="20" ng-src="./img/ServiceIcons/ServiceYouth.png">
+				<img ng-show='item.ServiceReferTo' height="20" width="20" ng-src="./img/ServiceIcons/ServiceReferTo.png">
+				<img ng-show='item.ServiceReferFrom' height="20" width="20" ng-src="./img/ServiceIcons/ServiceReferFrom.png">
+				<i><p ng-show='item.DescriptionHealth' style="color:black">{{item.DescriptionHealth}}</p></i>
+				<i><p ng-show='item.DescriptionTele' style="color:black">{{item.DescriptionTele}}</p></i>
+				<i><p ng-show='item.DescriptionWeb' style="color:black">{{item.DescriptionWeb}}</p></i>
+				<i><p ng-show='item.DescriptionYouth' style="color:black">{{item.DescriptionYouth}}</p></i>
+                <br />
+				<p ng-show='item.ServicePhone' style="color:black">Phone: {{item.ServicePhone}}<p>
+				<p ng-show='item.ServiceURL' style="color:black">Web Address: {{item.ServiceURL}}<p>
+				<p> Opening Hours: </p>
+				<p ng-show='item.OpenMon && item.CloseMon' style="color:black">Monday: {{item.OpenMon}} - {{item.CloseMon}} <p>
+				<p ng-show='item.OpenTues && item.CloseTues' style="color:black">Tuesday: {{item.OpenTues}} - {{item.CloseTues}} <p>				
+				<p ng-show='item.OpenWed && item.CloseWed' style="color:black">Wednesday: {{item.OpenWed}} - {{item.CloseWed}} <p>	
+				<p ng-show='item.OpenThurs && item.CloseThurs' style="color:black">Thursday: {{item.OpenThurs}} - {{item.CloseThurs}} <p>		
+				<p ng-show='item.OpenFri && item.CloseFri' style="color:black">Friday: {{item.OpenFri}} - {{item.CloseFri}} <p>	
+				<p ng-show='item.OpenSat && item.CloseSat' style="color:black">Saturday: {{item.OpenSat}} - {{item.CloseSat}} <p>
+				<p ng-show='item.OpenSun && item.CloseSun' style="color:black">Sunday: {{item.OpenSun}} - {{item.CloseSun}} <p>	
+				<br>
+				<img ng-show='item.CategoryHealth' height="20" width="20" ng-src="./img/CategoryIcons/Health.png">
+				<img ng-show='item.CategoryWeb' height="20" width="20" ng-src="./img/CategoryIcons/Web.png">
+				<img ng-show='item.CategoryTelephone' height="20" width="20" ng-src="./img/CategoryIcons/Phone.png">
+				<img ng-show='item.CategoryYouth' height="20" width="20" ng-src="./img/CategoryIcons/Youth.png">
+            </ion-item>
+     </ion-list>
+	
+  </ion-content>
+</ion-view>
